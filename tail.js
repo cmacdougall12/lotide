@@ -9,13 +9,13 @@ const tail = function(array) {
   return myArray;
 };
 
-//check to see if it equals given condition
+// Assert Equals
 const assertEqual = function(actual, expected) {
   if (actual === expected) {
-    return console.log(`✅ ✅ ✅ ✅ Assertion Passed: ${actual} === ${expected}`);
+    return console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
 
   } else {
-    return console.log(`❌❌❌❌ ${actual} !== ${expected}`);
+    return console.log(`🛑🛑🛑 ${actual} !== ${expected}`);
   }
 };
 
