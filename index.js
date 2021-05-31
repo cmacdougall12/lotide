@@ -15,8 +15,6 @@ const middle = require('./middle');
 const tail = require('./tail');
 const takeUntil = require('./takeUntil');
 const without = require('./without');
-
-
 const eqArrays = require('./eqArrays');
 
 module.exports = {
