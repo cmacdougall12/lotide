@@ -2,9 +2,6 @@
 const assert = require('chai').assert;
 const countLetters = require('../countLetters');
 
-let result = countLetters("lighthouse in the house");
-
-
 //test countLetteres function in countLetters.js
 describe("#head", () => {
   //test string
