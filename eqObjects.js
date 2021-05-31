@@ -4,6 +4,7 @@
 //check length
 //loop through keys of object 1 and confirm the values of obj1 and obj2 are the same. If not return false
 //if the value of the key is an array pass to the eqArray function and return the result (true or false)
+const eqArrays = require('./eqArrays');
 
 const eqObjects = function(object1, object2) {
   if (Object.keys(object1).length !== Object.keys(object2).length) {

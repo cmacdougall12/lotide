@@ -1,5 +1,7 @@
 //assertObjectsEqual*********
 //output to the console the objects in question and whether or not they are equal
+const eqObjects = require('./eqObjects')
+
 const assertObjectsEqual = function(actual, expected) {
   const inspect = require('util').inspect; ``
   if (eqObjects(actual, expected) === true) {

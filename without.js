@@ -13,7 +13,7 @@ const without = function(source, toRemove) {
       filtered.push(source[i]);
     }
   }
-  return console.log('Filtered Array: ' + filtered);
+  return filtered;
 };
 
 module.exports = without;

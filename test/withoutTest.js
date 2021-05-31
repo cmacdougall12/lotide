@@ -1,39 +1,26 @@
-//Check if two arrays are equivalent
-//confirm that arrays have same length and then compare value by value with for loop.
-//return console.log statement confirming if they are the same or not
-const assertArraysEqual = function(arr1, arr2) {
-  if (eqArrays(arr1, arr2) === true) {
-    return console.log(`✅✅✅  Assertion Passed: [${arr1}] === [${arr2}]`);
-  }
-  else {
-    return console.log(`🛑🛑🛑 Assertion Failed: [${arr1}] !== [${arr2}]`)
-  }
-};
+//import
+const assert = require('chai').assert;
+const without = require('../without');
 
-//Check if two arrays are equivalent
-//confirm that arrays have same length and then compare value by value with for loop
-const eqArrays = function(arr1, arr2) {
-  if (arr1.length === arr2.length) {
-    for (let i = 0; i < arr1.length; i++) {
-      if (arr1[i] !== arr2[i]) {
-        return false;
-      }
-    } return true;
-  } else {
-    return false;
-  }
-};
+//test without function
+describe("#without", () => {
 
+  const array = ["hello", "world", "lighthouse"];
 
-//TEST FUNCTIONS
-//define a source array called words
-const words = ["hello", "world", "lighthouse"];
-//test cases
-//empty array
-without(words, []);
-//remove lighthouse
-without(words, ["lighthouse"]);
+  it("returns ['hello', 'world', 'lighthouse']", () => {
+    assert.deepEqual(without(array, []), ["hello", "world", "lighthouse"]);
+  });
 
-//confirm that words array is not being modified to confirm original array has not changed
-assertArraysEqual(words, ["hello", "world", "lighthouse"]);
+  it("returns ['hello', 'world']", () => {
+    assert.deepEqual(without(array, ["lighthouse"]), ["hello", "world"]);
+  });
+
+  it("returns []", () => {
+    assert.deepEqual(without(array, ["hello", "world", "lighthouse"]), []);
+  });
+
+  // without(array, ["lighthouse"]);
+  // assertArraysEqual(words, ["hello", "world", "lighthouse"]);
+
+});
 

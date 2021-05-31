@@ -1,19 +1,25 @@
-// Assert Equals
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    return console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
-
-  } else {
-    return console.log(`🛑🛑🛑 ${actual} !== ${expected}`);
-  }
-};
+//import
+const assert = require('chai').assert;
+const findKeyByValue = require('../findKeyByValue');
 
 
-const bestTVShowsByGenre = {
-  sci_fi: "The Expanse",
-  comedy: "Brooklyn Nine-Nine",
-  drama: "The Wire"
-};
+//Test findKeyByValue
+describe("#findKeyByValue", () => {
 
-assertEqual(findKeyByValue(bestTVShowsByGenre, "The Wire"), "drama");
-assertEqual(findKeyByValue(bestTVShowsByGenre, "That '70s Show"), undefined);
+  //test object
+  const bestTVShowsByGenre = {
+    sciFi: "The Expanse",
+    comedy: "Brooklyn Nine-Nine",
+    drama: "The Wire"
+  };
+
+  //now see if result outputs correct quantity for each letter
+  it("Should output drama", () => {
+    assert.strictEqual(findKeyByValue(bestTVShowsByGenre, "The Wire"), "drama");
+  });
+
+  it("Should output undefined", () => {
+    assert.strictEqual(findKeyByValue(bestTVShowsByGenre, "That '70s Show"), undefined);
+  });
+
+});
