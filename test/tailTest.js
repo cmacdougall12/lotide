@@ -1,15 +1,23 @@
-//import tail.js and assertEquals.js to test the function tail
+//import tail.js
 const tail = require('../tail');
-const assertEqual = require('../assertEqual');
-const result = tail(["Hello", "Lighthouse", "Labs"]);
+//import chai library and assert function
+const assert = require('chai').assert;
 
-//Test case for the returned array elements
-assertEqual(result.length, 2); // ensure we get back two elements
-assertEqual(result[0], "Lighthouse"); // ensure first element is "Lighthouse"
-assertEqual(result[1], "Labs"); // ensure second element is "Labs"
+//test tail function in tail.js
+describe("#tail", () => {
 
+  it("returns [] for [1]", () => {
+    assert.deepEqual(tail([1]), []);
+  });
 
-// Test Case: Check the original array
-const words = ["Yo Yo", "Lighthouse", "Labs"];
-tail(words);
-assertEqual(words.length, 3);
+  it("returns ['Lighthouse', 'Labs'] for ['Hello', 'Lighthouse', 'Labs']", () => {
+    assert.deepEqual(tail(['Hello', 'Lighthouse', 'Labs']), ['Lighthouse', 'Labs']);
+  });
+
+  it("ensure orginal array remains unchanged. Pass array = ['Yo Yo', 'Lighthouse', 'Labs'] through the tail function and then check to see if array still equals ['Yo Yo', 'Lighthouse', 'Labs']", () => {
+    const array = ['Yo Yo', 'Lighthouse', 'Labs']
+    tail(array); 
+    assert.deepEqual(array, array);
+  });
+
+});
