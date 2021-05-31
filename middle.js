@@ -1,29 +1,3 @@
-//Check if two arrays are equivalent
-//confirm that arrays have same length and then compare value by value with for loop.
-//return console.log statement confirming if they are the same or not
-const assertArraysEqual = function(arr1, arr2) {
-  if (eqArrays(arr1, arr2) === true) {
-    return console.log(`✅✅✅  Assertion Passed: [${arr1}] === [${arr2}]`);
-  }
-  else {
-    return console.log(`🛑🛑🛑 Assertion Failed: [${arr1}] !== [${arr2}]`)
-  }
-};
-
-//Check if two arrays are equivalent
-//confirm that arrays have same length and then compare value by value with for loop
-const eqArrays = function(arr1, arr2) {
-  if (arr1.length === arr2.length) {
-    for (let i = 0; i < arr1.length; i++) {
-      if (arr1[i] !== arr2[i]) {
-        return false;
-      }
-    } return true;
-  } else {
-    return false;
-  }
-};
-
 //function will retrieve middle elements of a given array
 const middle = function(array) {
   let midArray = [];
@@ -41,15 +15,7 @@ const middle = function(array) {
   return midArray;
 };
 
-//TEST CASES
-//short arrays
-assertArraysEqual(middle([1]), []);
-assertArraysEqual(middle([1, 2]), []);
-//odd in length
-assertArraysEqual(middle([1, 2, 3]), [2]);
-assertArraysEqual(middle([1, 2, 3, 4, 5]), [3]);
-//even in length
-assertArraysEqual(middle([1, 2, 3, 4]), [2, 3]);
-assertArraysEqual(middle([1, 2, 3, 4, 5, 6]), [3, 4]);
+
+module.exports = middle;
 
 
