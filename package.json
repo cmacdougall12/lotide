@@ -1,7 +1,7 @@
 {
   "name": "@cmacdougall12/lotide",
-  "version": "1.0.0",
-  "description": "A mini clone of the [Lodash](https://lodash.com) library.",
+  "version": "1.0.1",
+  "description": "A mini clone of the [Lodash](https://lodash.com) library. Version 1.0.1 has updated eqArrays and eqObjects to deal with nested arrays and objects respectively by using recursion",
   "main": "assertArraysEqual.js",
   "directories": {
     "test": "test"
